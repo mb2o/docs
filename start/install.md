@@ -7,7 +7,7 @@
 
 ### Installation
 
-1. [Download Laravel](https://github.com/taylorotwell/laravel/zipball/master)
+1. [Download Laravel](http://laravel.com/download)
 2. Extract the Laravel archive and upload the contents to your web server.
 4. Set the URL of your application in the **application/config/application.php** file.
 5. Navigate to your application in a web browser.
