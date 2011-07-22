@@ -114,7 +114,7 @@ Named views make your code more expressive and beautiful. Using them is simple. 
 
 	);
 
-This array defined the "home" named view as being associated with the **application/views/home/index.php** file. Now, you can use the View::of dynamic method to create named view instances using simple, expressive syntax:
+This array defines the "home" named view as being associated with the **application/views/home/index.php** file. Now, you can use the **View::of** dynamic method to create named view instances using simple, expressive syntax:
 
 	return View::of_home();
 
@@ -125,6 +125,10 @@ Of course, you may pass bindings into the **of** method:
 Since the **of** method returns an instance of the **View** class, you may use any of the View class methods:
 
 	return View::of_home()->bind('email', $email);
+
+Using named views can make templating a breeze:
+
+	return View::of_layout()->bind('content', $content);
 
 <a name="redirect"></a>
 ## Redirects
