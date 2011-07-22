@@ -386,7 +386,7 @@ Just looking at pagination libraries probably makes you cringe. It doesn't have 
 
 > **Note:** Before learning about pagination, you should probably read up on [Eloquent models](/docs/database/eloquent).
 
-To learn about pagination, we'll use a "User" Eloquent model. First, let's define a **per_page** static property on our model. This will tell Laravel how many users to show per page when paginating lists of users:
+To learn about pagination, we'll use an "User" Eloquent model. First, let's define a **per_page** static property on our model. This will tell Laravel how many users to show per page when paginating lists of users:
 
 	class User extends Eloquent {
 
@@ -394,15 +394,17 @@ To learn about pagination, we'll use a "User" Eloquent model. First, let's defin
 
 	}
 
-Great! So, we have told Laravel to show 10 users per page when paginating users.
-
-Now you're ready to get paginated results from the database. It couldn't be any easier. Just use the **paginate** method:
+Great! Now you're ready to get paginated results from the database. It couldn't be any easier. Just use the **paginate** method:
 
 	$users = User::where('posts', '>', 100)->paginate();
 
-The **paginate** method will return an instance of the **Paginator** class. The results of your query can be accessed via the **results** property on the Paginator instance:
+The **paginate** method will return an instance of the **Paginator** class. Notice you didn't have to specify the current page or the total amount of users. Laravel makes your life easier by figuring that stuff out for you. The results of your query can be accessed via the **results** property on the Paginator instance:
 
 	$results = $users->results;
+
+Need to paginate results using the [Fluent query builder](/docs/database/query)? Simply pass the number of items to show per page into the **paginate** method:
+
+	$users = DB::table('users')->where('votes', '>' 100)->paginate(10);
 
 Alright, you are ready to display the results on a View:
 
