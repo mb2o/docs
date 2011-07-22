@@ -450,6 +450,6 @@ Need to style your links? No problem. All pagination link elements can be style 
 		<a href="foo" class="next_page">Next</a>
 	</div>
 
-When you are on the first page of results, the "Previous" link will be disabled. Likewise, when you are on the last page of results, the "Next" link will be disabled. The generated HTML will look like this:
+When you are on the first page of results, the "Previous" link will be disabled. Likewise, the "Next" link will be disabled when you are on the last page of results. The generated HTML will look like this:
 
 	<span class="disabled prev_page">Previous</span>
