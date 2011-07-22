@@ -59,7 +59,7 @@ Then, simply pass an array of place-holder replacements to the **replace** metho
 
 Alternatively, you may pass the replacements as the second parameter to the **line** method:
 
-	echo Lang::line('marketing.welcome', $replacements)->get();
+	echo Lang::line('marketing.welcome', $replacements)->get('sp');
 
 This statement will return a nice, heart-warming welcome message:
 
