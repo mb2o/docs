@@ -3,6 +3,7 @@
 - [Quick Start Using SQLite](#quick)
 - [Configuring MySQL or PostgreSQL](#server)
 - [Setting The Default Connection Name](#default)
+- [Connecting To Other Database Systems](#other)
 
 Database configuration in Laravel is easy. The hardest part is deciding which database to use. Three popular open-source databases are supported out of the box:
 
@@ -50,3 +51,19 @@ As you have probably noticed, each database connection defined in the **applicat
 	'default' => 'sqlite';
 
 The default connection will always be used by the [fluent query builder](/docs/database/query) and [Eloquent ORM](/docs/database/eloquent). If you need to change the default connection during a request, use the **Config::set** method.
+
+<a name="other"></a>
+### Connecting To Other Database Systems
+
+Need to using something besides MySQL, PostgreSQL, or SQLite? You can! Sort of...
+
+To make a PDO connection to an unsupported database, just add a **dsn** option to the connection configuration:
+
+	'odbc' => array(
+		'driver' => 'odbc',
+		'dsn'    => 'DRIVER={iSeries Access ODBC Driver};SYSTEM=x45624',
+	),
+
+Laravel will use the supplied driver and DSN to create a PDO connection. However, using [Eloquent](/docs/database/eloquent) or the [fluent query builder](/docs/database/query) may produce unexpected results. Of course, you may always access the raw PDO connection through the **DB::connection** method:
+
+	$pdo = DB::connection('odbc');
