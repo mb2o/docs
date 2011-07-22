@@ -3,7 +3,7 @@
 - [Creating Views](/docs/start/views#create)
 - [Binding Data To Views](/docs/start/views#bind)
 - [Nesting Views Within Views](/docs/start/views#nest)
-- [Named Views](/docs/start/views#named)
+- [Named Views](/docs/start/views#named-views)
 - [Redirects](/docs/start/views#redirect)
 - [Downloads](/docs/start/views#downloads)
 - [Building URLs](/docs/start/views#urls)
@@ -103,7 +103,7 @@ Or, you can get the string content of a view using the **get** method:
 		<?php echo View::make('footer')->get(); ?>
 	</html>
 
-<a named="named"></a>
+<a named="named-views"></a>
 ## Named Views
 
 Named views make your code more expressive and beautiful. Using them is simple. All of your named views are defined in the **application/config/view.php** configuration file. By default, a name has been defined for the **home/index** view:
