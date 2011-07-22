@@ -126,7 +126,7 @@ Since the **of** method returns an instance of the **View** class, you may use a
 
 	return View::of_home()->bind('email', $email);
 
-Using named views can make templating a breeze:
+Using named views makes templating a breeze:
 
 	return View::of_layout()->bind('content', $content);
 
