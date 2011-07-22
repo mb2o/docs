@@ -406,7 +406,7 @@ Need to paginate results using the [Fluent query builder](/docs/database/query)?
 
 	$users = DB::table('users')->where('votes', '>' 100)->paginate(10);
 
-Alright, you are ready to display the results on a View:
+Alright, now you are ready to display the results on a View:
 
 	<?php foreach ($users->results as $user): ?>
 		<p><?php echo $user->name; ?></p>
@@ -429,15 +429,23 @@ Need to style your links? No problem. All pagination link elements can be style 
 	<div class="pagination">
 		<a href="foo" class="prev_page">Previous</a>
 
-		<a href="foo">1</a><a href="foo">2</a><span class="dots">...</span>
+		<a href="foo">1</a>
+		<a href="foo">2</a>
+
+		<span class="dots">...</span>
 
 		<a href="foo">11</a>
 		<a href="foo">12</a>
+
 		<span class="current">13</span>
+
 		<a href="foo">14</a>
 		<a href="foo">15</a>
 
-		<span class="dots">...</span><a href="foo">25</a><a href="foo">26</a>
+		<span class="dots">...</span>
+
+		<a href="foo">25</a>
+		<a href="foo">26</a>
 
 		<a href="foo" class="next_page">Next</a>
 	</div>
