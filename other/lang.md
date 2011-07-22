@@ -53,13 +53,9 @@ Now, let's work on our welcome message. "Welcome to our website!" is a pretty ge
 
 	'welcome' => 'Welcome to our website, :name!'
 
-Then, simply pass an array of place-holder replacements to the **replace** method on a Lang instance:
+Then, simply pass an array of place-holder replacements as the second parameter to the **line** method:
 
-	echo Lang::line('marketing.welcome')->replace(array('name' => 'Taylor'))->get();
-
-Alternatively, you may pass the replacements as the second parameter to the **line** method:
-
-	echo Lang::line('marketing.welcome', $replacements)->get('sp');
+	echo Lang::line('marketing.welcome', array('name' => 'Taylor'))->get();
 
 This statement will return a nice, heart-warming welcome message:
 

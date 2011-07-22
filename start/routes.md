@@ -123,4 +123,4 @@ Here's what to do. First, create an **application/routes** directory. Great! You
 
 The **application/routes.php** file will continue to be loaded on every request, so any "catch-all" routes can still be placed in that file. The **application/routes.php** file should also still contain the route for the root of your application.
 
-Need even more breathing room? You can nest directories inside of your **application/routes** directory as deep as you wish. For example, an **application/routes/user/admin.php** file would handle all requests beginning with **user/admin**.
+> **Note:** Need even more organization? You are free to create sub-directories in the **application/routes** directory. For example, an **application/routes/user/admin.php** file would handle all requests to URIs beginning with **user/admin**.
