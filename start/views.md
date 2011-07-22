@@ -103,7 +103,7 @@ Or, you can get the string content of a view using the **get** method:
 		<?php echo View::make('footer')->get(); ?>
 	</html>
 
-<a named="named-views"></a>
+<a name="named-views"></a>
 ## Named Views
 
 Named views make your code more expressive and beautiful. Using them is simple. All of your named views are defined in the **application/config/view.php** configuration file. By default, a name has been defined for the **home/index** view:

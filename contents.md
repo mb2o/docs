@@ -12,7 +12,7 @@
 	- [Creating Views](/docs/start/views#create)
 	- [Binding Data To Views](/docs/start/views#bind)
 	- [Nesting Views Within Views](/docs/start/views#nest)
-	- [Named Views](/docs/start/views#named)
+	- [Named Views](/docs/start/views#named-views)
 	- [Redirects](/docs/start/views#redirect)
 	- [Downloads](/docs/start/views#downloads)
 	- [Building URLs](/docs/start/views#urls)
