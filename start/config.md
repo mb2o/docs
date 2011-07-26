@@ -33,7 +33,7 @@ Great! Next, create an **application/config/local** directory. Any files and opt
 
 	);
 
-In this example, the local **URL** option will override the **URL** option in **application/config/application.php**.
+In this example, the local **URL** option will override the **URL** option in **application/config/application.php**. Notice that you only need to specify the options you wish to override. It's refreshingly simple, isn't it?
 
 If you do not have access to your server's configuration files, you may manually set the **LARAVEL_ENV** variable at the top of your **public/index.php** file:
 
