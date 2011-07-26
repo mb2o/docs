@@ -39,8 +39,6 @@ If you do not have access to your server's configuration files, you may manually
 
 	$_SERVER['LARAVEL_ENV'] = 'local';
 
-> **Note:**
-
 <a name="clean"></a>
 ### Cleaner URLs
 
