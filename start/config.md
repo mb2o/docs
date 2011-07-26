@@ -1,6 +1,7 @@
 ## Basic Configuration
 
 - [Quick Start](#quick)
+- [Environments](#environments)
 - [Cleaner URLs](#clean)
 - [Errors & Logging](#errors)
 
@@ -14,6 +15,27 @@ There is only one option that **must** be set when starting a new application. L
 	'url' => 'http://localhost';
 
 > **Note:** If you are using mod_rewrite, you should set the index option to an empty string.
+
+<a name="environments"></a>
+### Environments
+
+Most likely, the configuration options you need for local development are not the same as the options you need on your production server. Laravel provides a convenient way to manage these differences using the **LARAVEL_ENV** environment variable. To get started, set the environment variable in your **httpd.conf** file:
+
+	SetEnv LARAVEL_ENV local
+
+> **Note:** Using a web server other than Apache? No problem. Just follow your server's method of setting environment variables.
+
+Great! Next, create an **application/config/local** directory. Any files and options you place in this directory will override the options in the base **application/config** directory. For example, you may wish to create an **application.php** file within your new **local** configuration directory:
+
+	return array(
+
+		'url' => 'http://localhost/laravel/public',
+
+	);
+
+Notice that you do not need to specify every option in your local configuration file. Only to specify the options you wish to override. In this example, the **URL** option in **application/config/local/application.php will override the **URL** option in **application/config/application.php**. It's refreshingly simple.
+
+> **Note:**
 
 <a name="clean"></a>
 ### Cleaner URLs
