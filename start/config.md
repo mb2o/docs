@@ -23,7 +23,7 @@ Most likely, the configuration options you need for local development are not th
 
 	SetEnv LARAVEL_ENV local
 
-> **Note:** Using a web server other than Apache? No problem. Just follow your server's method of setting environment variables.
+> **Note:** Using a web server other than Apache? Check your server's documentation to learn how to set environment variables.
 
 Great! Next, create an **application/config/local** directory. Any files and options you place in this directory will override the options in the base **application/config** directory. For example, you may wish to create an **application.php** file within your new **local** configuration directory:
 
@@ -35,7 +35,7 @@ Great! Next, create an **application/config/local** directory. Any files and opt
 
 In this example, the local **URL** option will override the **URL** option in **application/config/application.php**.
 
-If you do not have access to your server's configuration files, you may manually set the **LARAVEL_ENV** variable at the top of the **public/index.php** file:
+If you do not have access to your server's configuration files, you may manually set the **LARAVEL_ENV** variable at the top of your **public/index.php** file:
 
 	$_SERVER['LARAVEL_ENV'] = 'local';
 
