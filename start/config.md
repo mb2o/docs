@@ -33,7 +33,7 @@ Great! Next, create an **application/config/local** directory. Any files and opt
 
 	);
 
-In this example, the **URL** option in **application/config/local/application.php will override the **URL** option in **application/config/application.php**. It's refreshingly simple.
+In this example, the **URL** option in **application/config/local/application.php will override the **URL** option in **application/config/application.php**. There is no need to copy the entire configuration from the root directory into your local directory, as you only need to specify the options you wish to override. It's refreshingly simple.
 
 > **Note:**
 
