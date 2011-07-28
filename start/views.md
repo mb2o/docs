@@ -96,7 +96,17 @@ Want to nest views inside of views? There are two ways to do it, and they are bo
 	     return $view;
 	}
 
-Or, you can get the string content of a view using the **get** method:
+Nested calls to **View::make** can get a little ugly. For that reason, Laravel provides a simple **partial** method:
+
+	View::make('layout/default')->partial('content', 'partials/home');
+
+The **partial** method is very similar to the **bind** method; however, you simply pass a view name in the second parameter to the method. The view will created and bound to the variable for you.
+
+Need to bind data to a partial? No problem. Pass the data in the third parameter to the method:
+
+	View::make('layout/default')->partial('content', 'partials/home', array('name' => 'Taylor'));
+
+In some situations, you may need to get the string content of a view from within another view. It's easy using the **get** method:
 
 	<html>
 		<?php echo View::make('content')->get(); ?>
