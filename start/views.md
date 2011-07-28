@@ -511,4 +511,4 @@ But, that's a little cumbersome. Instead, use the **error** method on the **Resp
 
 	return Response::error('404');
 
-> **Note:** The error passed the **error** method must have a corresponding view in **application/views/error** directory.
+> **Note:** The error passed the **error** method must have a corresponding view in the **application/views/error** directory.

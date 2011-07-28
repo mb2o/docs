@@ -18,6 +18,7 @@
 	- [Building URLs](/docs/start/views#urls)
 	- [Building HTML](/docs/start/views#html)
 	- [Pagination](/docs/start/views#pagination)
+	- [Errors](/docs/start/views#errors)
 - [Interaction](/docs/start/interaction)
 	- [Input](/docs/start/interaction#basics)
 	- [Old Input](/docs/start/interaction#old)
