@@ -104,7 +104,8 @@ The **partial** method is very similar to the **bind** method; however, you simp
 
 Need to bind data to a partial? No problem. Pass the data in the third parameter to the method:
 
-	View::make('layout/default')->partial('content', 'partials/home', array('name' => 'Taylor'));
+	View::make('layout/default')
+					->partial('content', 'partials/home', array('name' => 'Taylor'));
 
 In some situations, you may need to get the string content of a view from within another view. It's easy using the **get** method:
 
