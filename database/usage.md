@@ -16,6 +16,10 @@ The return value of the query method depends on the type of query that is execut
 - **INSERT** statements will return **true** or **false**, depending on the success of the query.
 -  **UPDATE** and **DELETE** statements will return the number of rows affected by the query.
 
+When you need to get only one record from a table, use the **first** method. The method will return a single stdClass instance, or NULL if no records are found:
+
+	$user = DB::first('select * from users where id = 1');
+
 ### Connections
 
 Need to get the raw PDO object for a connection? It's easy. Just mention the connection name to the **connection** method on the DB class:
