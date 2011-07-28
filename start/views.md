@@ -9,6 +9,7 @@
 - [Building URLs](/docs/start/views#urls)
 - [Building HTML](/docs/start/views#html)
 - [Pagination](/docs/start/views#pagination)
+- [Errors](/docs/start/views#errors)
 
 <a name="create"></a>
 ## Creating Views
@@ -445,6 +446,12 @@ Need to paginate results using the [Fluent query builder](/docs/database/query)?
 
 	$users = DB::table('users')->where('votes', '>' 100)->paginate(10);
 
+You can even specify which columns to retrieve. Just pass an array of column names as the second parameter to the method:
+
+	$users = DB::table('users')
+						->where('votes', '>' 100)
+						->paginate(10, array('id', 'email'));
+
 Alright, now you are ready to display the results on a View:
 
 	<?php foreach ($users->results as $user): ?>
@@ -492,3 +499,16 @@ Need to style your links? No problem. All pagination link elements can be style 
 When you are on the first page of results, the "Previous" link will be disabled. Likewise, the "Next" link will be disabled when you are on the last page of results. The generated HTML will look like this:
 
 	<span class="disabled prev_page">Previous</span>
+
+<a name="errors"></a>
+## Errors
+
+Sometimes you may need to return an error response, such as the **404** or **500** views. It can be done like this:
+
+	return Response::make(View::make('error/404'), 404);
+
+But, that's a little cumbersome. Instead, use the **error** method on the **Response** class. Just mention the error you want to return:
+
+	return Response::error('404');
+
+> **Note:** The error passed the **error** method must have a corresponding view in **application/views/error** directory.
