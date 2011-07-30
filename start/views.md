@@ -147,7 +147,7 @@ Using named views makes templating a breeze:
 <a name="composers"></a>
 ## View Composers
 
-View composers will free you from repetitive, brittle code, and help keep your application beautiful and maintainable. All view composers are defined in the **application/composers.php** file. Each time a view is created, its composer will be called. The composer can bind data to the view, register its assets, or even gather common data needed for the view. When the composer is finished working with the view, it will return the view instance. Here's an example:
+View composers will free you from repetitive, brittle code, and help keep your application beautiful and maintainable. All view composers are defined in the **application/composers.php** file. Each time a view is created, its composer will be called. The composer can bind data to the view, register its assets, or even gather common data needed for the view. When the composer is finished working with the view, it should return the view instance. Here's an example composer:
 
 	return array(
 
@@ -164,7 +164,7 @@ View composers will free you from repetitive, brittle code, and help keep your a
 
 	);
 
-Great! We have defined a composer for the **layouts/default** view. Now, every time that view is created, the composer will be called. As you can see, the composer is registering some common assets, as well as binding partial views to the layout. Of course, we can create an instance of the view using the same syntax we're used to:
+Great! We have defined a composer for the **layouts/default** view. Now, every time the view is created, this composer will be called. As you can see, the composer is registering some common assets, as well as binding partial views to the layout. Of course, we can create an instance of the view using the same syntax we're used to:
 
 	return View::make('layouts/default');
 
@@ -186,13 +186,15 @@ When you are ready to place the links to the registered assets on your view, you
 		<?php echo Asset::scripts(); ?>
 	</head>
 
-Sometimes you may need to specify that an asset has dependencies. This means that the asset requires other assets must be declared in your view before it can be declared. Managing asset dependencies couldn't be easier in Laravel. Remember, the "names" you gave to your assets. You can pass them as the third parameter to the **add** method to declare dependencies:
+Sometimes you may need to specify that an asset has dependencies. This means that the asset requires other assets to be declared in your view before it can be declared. Managing asset dependencies couldn't be easier in Laravel. Remember the "names" you gave to your assets? You can pass them as the third parameter to the **add** method to declare dependencies:
 
 	Asset::add('jquery-ui', 'js/jquery-ui.js', 'jquery');
 
-Great! In this example, we are registering the **jquery-ui** asset, as well as specifying that it is dependent on the **jquery** asset. Now, when you place the asset links on your views, the jQuery asset will always be declared before the jQuery UI asset.
+Great! In this example, we are registering the **jquery-ui** asset, as well as specifying that it is dependent on the **jquery** asset. Now, when you place the asset links on your views, the jQuery asset will always be declared before the jQuery UI asset. Need to declare more than one dependency? No problem:
 
-To increase response times, it is common to place JavaScript at the bottom of HTML documents. But, what if you also need to place some assets in the head of your document? No problem. The asset class provides a simple way to manage asset **containers**. Simple call the **container** method on the Asset class and mention the container name. Once you have a container instance, you are free to add any assets you wish to the container using the same syntax you are used to:
+	Asset::add('jquery-ui', 'js/jquery-ui.js', array('first', 'second'));
+
+To increase response time, it is common to place JavaScript at the bottom of HTML documents. But, what if you also need to place some assets in the head of your document? No problem. The asset class provides a simple way to manage asset **containers**. Simple call the **container** method on the Asset class and mention the container name. Once you have a container instance, you are free to add any assets you wish to the container using the same syntax you are used to:
 
 	Asset::container('footer')->add('example', 'js/example.js');
 
