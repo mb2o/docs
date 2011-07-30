@@ -13,6 +13,8 @@
 	- [Binding Data To Views](/docs/start/views#bind)
 	- [Nesting Views Within Views](/docs/start/views#nest)
 	- [Named Views](/docs/start/views#named-views)
+	- [View Composers](/docs/start/views#composers)
+	- [Managing Assets](/docs/start/views#assets)
 	- [Redirects](/docs/start/views#redirect)
 	- [Downloads](/docs/start/views#downloads)
 	- [Building URLs](/docs/start/views#urls)

@@ -170,6 +170,36 @@ Great! We have defined a composer for the **layouts/default** view. Now, every t
 
 There is no need to specify you want to use the composer. It will be called automatically when the view is created. Enjoy the elegance.
 
+<a name="assets"></a>
+## Managing Assets
+
+The **Asset** class provides a simple, elegant way to manage the CSS and JavaScript used by your application. Registering an asset is simple. Just call the **add** method on the **Asset** class:
+
+	Asset::add('jquery', 'js/jquery.js');
+
+Wonderful. The **add** method accepts three parameters. The first is the name of the asset, the second is the path to the asset relative to the **public** directory, and the third is a list of asset dependencies (more on that later). Notice that we did not tell the method if we were registering JavaScript or CSS. The **add** method will use the file extension to determine the type of file we are registering.
+
+When you are ready to place the links to the registered assets on your view, you may use the **styles** or **scripts** methods:
+
+	<head>
+		<?php echo Asset::styles(); ?>
+		<?php echo Asset::scripts(); ?>
+	</head>
+
+Sometimes you may need to specify that an asset has dependencies. This means that the asset requires other assets must be declared in your view before it can be declared. Managing asset dependencies couldn't be easier in Laravel. Remember, the "names" you gave to your assets. You can pass them as the third parameter to the **add** method to declare dependencies:
+
+	Asset::add('jquery-ui', 'js/jquery-ui.js', 'jquery');
+
+Great! In this example, we are registering the **jquery-ui** asset, as well as specifying that it is dependent on the **jquery** asset. Now, when you place the asset links on your views, the jQuery asset will always be declared before the jQuery UI asset.
+
+To increase response times, it is common to place JavaScript at the bottom of HTML documents. But, what if you also need to place some assets in the head of your document? No problem. The asset class provides a simple way to manage asset **containers**. Simple call the **container** method on the Asset class and mention the container name. Once you have a container instance, you are free to add any assets you wish to the container using the same syntax you are used to:
+
+	Asset::container('footer')->add('example', 'js/example.js');
+
+Getting the links to your container assets is just as simple:
+
+	echo Asset::container('footer')->scripts();
+
 <a name="redirect"></a>
 ## Redirects
 
