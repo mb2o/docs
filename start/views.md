@@ -168,7 +168,7 @@ Great! We have defined a composer for the **layouts/default** view. Now, every t
 
 	return View::make('layouts/default');
 
-There is no need to specify you want to use the composer. It will be called automatically when the view is created. The composer helps keep your code clean by allowing to declare assets and common partials for views in a single location. Your code will be cleaner than ever. Enjoy the elegance.
+There is no need to specify you want to use the composer. It will be called automatically when the view is created. The composer helps keep your code clean by allowing you to declare assets and common partials for views in a single location. Your code will be cleaner than ever. Enjoy the elegance.
 
 <a name="assets"></a>
 ## Managing Assets
