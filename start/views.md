@@ -4,6 +4,8 @@
 - [Binding Data To Views](/docs/start/views#bind)
 - [Nesting Views Within Views](/docs/start/views#nest)
 - [Named Views](/docs/start/views#named-views)
+- [View Composers](/docs/start/views#composers)
+- [Managing Assets](/docs/start/views#assets)
 - [Redirects](/docs/start/views#redirect)
 - [Downloads](/docs/start/views#downloads)
 - [Building URLs](/docs/start/views#urls)
@@ -141,6 +143,32 @@ Since the **of** method returns an instance of the **View** class, you may use a
 Using named views makes templating a breeze:
 
 	return View::of_layout()->bind('content', $content);
+
+<a name="composers"></a>
+## View Composers
+
+View composers will free you from repetitive, brittle code, and help keep your application beautiful and maintainable. All view composers are defined in the **application/composers.php** file. Each time a view is created, its composer will be called. The composer can bind data to the view, register its assets, or even gather common data needed for the view. When the composer is finished working with the view, it will return the view instance. Here's an example:
+
+	return array(
+
+			'layouts/default' => function($view)
+			{
+				Asset::add('jquery', 'js/jquery.js');
+				Asset::add('jquery-ui', 'js/jquery-ui.js', 'jquery');
+
+				$view->partial('header', 'partials/header');
+				$view->partial('footer', 'partials/footer');
+
+				return $view;
+			}
+
+	);
+
+Great! We have defined a composer for the **layouts/default** view. Now, every time that view is created, the composer will be called. As you can see, the composer is registering some common assets, as well as binding partial views to the layout. Of course, we can create an instance of the view using the same syntax we're used to:
+
+	return View::make('layouts/default');
+
+There is no need to specify you want to use the composer. It will be called automatically when the view is created. Enjoy the elegance.
 
 <a name="redirect"></a>
 ## Redirects
