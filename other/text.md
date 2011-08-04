@@ -15,7 +15,11 @@
 
 The **Str** class also provides three convenient methods for manipulating string capitalization: **upper**, **lower**, and **title**. These are more intelligent versions of the PHP [strtoupper](http://php.net/manual/en/function.strtoupper.php), [strtolower](http://php.net/manual/en/function.strtolower.php), and [ucwords](http://php.net/manual/en/function.ucwords.php) methods. More intelligent because they can handle UTF-8 input if the [multi-byte string](http://php.net/manual/en/book.mbstring.php) PHP extension is installed on your web server. To use them, just pass a string to the method:
 
-	echo Str::lower('I am a string.'); echo Str::upper('I am a string.'); echo Str::title('I am a string.');
+	echo Str::lower('I am a string.');
+
+	echo Str::upper('I am a string.');
+
+	echo Str::title('I am a string.');
 
 <a name="random"></a>
 ### Generating Random Strings
