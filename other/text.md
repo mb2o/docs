@@ -1,4 +1,4 @@
-## Working With Text
+## Working With Strings
 
 - [The Basics](#basics)
 - [Capitalization, Etc.](#capitalization)
@@ -8,7 +8,7 @@
 <a name="basics"></a>
 ### The Basics
 
-**Laravel** provides two great classes for working with text and strings: **Str** and **Inflector**. Let's learn what each of them will do for us.
+Laravel provides two great classes for working with text and strings: **Str** and **Inflector**. Let's learn what each of them will do for us.
 
 <a name="capitalization"></a>
 ### Capitalization, Etc.
