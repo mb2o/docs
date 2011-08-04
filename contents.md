@@ -52,7 +52,7 @@
 
 ## Other Topics
 
-- [Working With Text](/docs/other/text)
+- [Working With Strings](/docs/other/text)
 - [Working With Files](/docs/other/file)
 - [Localization](/docs/other/lang)
 - [Encryption](/docs/other/crypt)
