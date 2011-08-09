@@ -120,15 +120,14 @@ In some situations, you may need to get the string content of a view from within
 <a name="named-views"></a>
 ## Named Views
 
-Named views make your code more expressive and beautiful. Using them is simple. All of your named views are defined in the **application/config/view.php** configuration file. By default, a name has been defined for the **home/index** view:
+Named views make your code more expressive and beautiful. Using them is simple. All of your named views are defined in the **application/composers.php** file. By default, a name has been defined for the **home/index** view:
 
-	'names' => array(
+	'home.index' => array('name' => 'home', function($view)
+	{
+		//
+	})
 
-		'home' => 'home/index',
-
-	);
-
-This array defines the "home" named view as being associated with the **application/views/home/index.php** file. Now, you can use the **View::of** dynamic method to create named view instances using simple, expressive syntax:
+Notice the **name** value in the array? This defines the "home" named view as being associated with the **application/views/home/index.php** file. Now, you can use the **View::of** dynamic method to create named view instances using simple, expressive syntax:
 
 	return View::of_home();
 
