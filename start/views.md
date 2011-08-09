@@ -150,7 +150,7 @@ View composers will free you from repetitive, brittle code, and help keep your a
 
 	return array(
 
-			'layouts/default' => function($view)
+			'layouts.default' => function($view)
 			{
 				Asset::add('jquery', 'js/jquery.js');
 				Asset::add('jquery-ui', 'js/jquery-ui.js', 'jquery');
@@ -165,7 +165,7 @@ View composers will free you from repetitive, brittle code, and help keep your a
 
 Great! We have defined a composer for the **layouts/default** view. Now, every time the view is created, this composer will be called. As you can see, the composer is registering some common assets, as well as binding partial views to the layout. Of course, we can create an instance of the view using the same syntax we're used to:
 
-	return View::make('layouts/default');
+	return View::make('layouts.default');
 
 There is no need to specify you want to use the composer. It will be called automatically when the view is created. The composer helps keep your code clean by allowing you to declare assets and common partials for views in a single location. Your code will be cleaner than ever. Enjoy the elegance.
 
