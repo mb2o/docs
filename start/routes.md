@@ -55,9 +55,9 @@ If you need more power and precision (or just want to be extra nerdy), you can e
 
 Once you start using named routes, you won't be able to live without them. They are that great. Here's how to do it:
 
-	'GET /user/login' => array('name' => 'login', 'do' => function() {})
+	'GET /user/login' => array('name' => 'login', function() {})
 
-Notice the route now has an array value with two keys: **name** and **do**. As you learned while studying filters, the **do** value is the method that will be executed by the route. As you have probably guessed, the **name** value is the name of the route.
+Notice the route now has an array value with a **name** key. As you have probably guessed, the **name** value is the name of the route.
 
 Now that you have named the route, you can [generate URLs](/docs/start/views#urls) and [perform redirects](/docs/start/views#redirect) using the route name instead of the route URI. This means that you can change the route URI as much as you want and the links to that route on your views will always be correct. It's beautiful, isn't it?
 
@@ -83,16 +83,16 @@ To define your own filter, simply add it to the array in the **application/filte
 
 Alright, ready to attach the filter to a route? Do it like this:
 
-	'GET /user' => array('before' => 'my_filter', 'do' => function() 
+	'GET /user' => array('before' => 'my_filter', function() 
 	{
 		//	
 	})
 
-Notice the route now has an array value with two keys: **before** and **do**. The **do** value is the method that will be executed by the route, while the **before** value contains the names of any filters that should be run before the method is executed.
+Notice the route now has an array value with a **before** key. The **before** value contains the names of any filters that should be run before the method is executed.
 
 Why stop with one filter? You can define multiple filters for a single route by separating the filter names with commas:
 
-	'POST /user' => array('before' => 'auth, csrf', 'do' => function() {})
+	'POST /user' => array('before' => 'auth, csrf', function() {})
 
 Remember, if a "before" filter returns a value, that value will be considered the output of the request. For example, the built-in **auth** filter checks if the user has logged in to your application. If they haven't, a [Redirect](/docs/start/views#redirect) to the login page is sent to the browser. Isn't the simplicity refreshing?
 
@@ -100,7 +100,7 @@ Of course, adding filters to run after the request is just as easy:
 
 	'my_filter' => function($response) {}
 
-	'GET /user' => array('after' => 'my_filter', 'do' => function() {})
+	'GET /user' => array('after' => 'my_filter', function() {})
 
 > **Note:** "After" filters receive the response returned by the route function that handled the request.
 
