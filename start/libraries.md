@@ -19,7 +19,7 @@ Libraries can be considered the "helper" classes of your application. Usually, t
 
 ### The Basics
 
-Packages and libraries have many things in common. Often, they provide functionality that is not specific to your application. However, packages are generally not written specifically for Laravel. For example, the wonderful e-mailing package [SwiftMailer](http//swiftmailer.org) is not written just for Laravel, but it can be used in a variety of frameworks, including Laravel. All packages live in the **application/packages** directory.
+Packages and libraries have many things in common. Often, they provide functionality that is not specific to your application. However, packages are generally not written specifically for Laravel. For example, the wonderful e-mailing package [SwiftMailer](http//swiftmailer.org) is not written just for Laravel, but it can be used in a variety of frameworks, including Laravel. All packages live in the **packages** directory.
 
 Often, it is necessary for packages to be bootstrapped. For example, the package may need to register its own auto-loader. Not a problem. The **package** class provides an easy to load packages. If a **bootstrap.php** file is present in the package root directory, it will be run.
 
