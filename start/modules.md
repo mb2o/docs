@@ -27,14 +27,14 @@ Next, in your **application/config/application.php** file, add **admin** to the 
 
 	'modules' => array('admin')
 
-Now browse to this URL in your web browser. See "Hello Admins!"? Wonderful. You're learning fast.
+Now, browse to this URL in your web browser. See "Hello Admins!"? Wonderful. You're learning fast.
 
 > **Note:** Module route filters work just like application route filters. Just create a **filters.php** file within your module directory.
 
 <a name="views"></a>
 ### Module Views
 
-To create a view that will be used by your module, simple create a **views** directory within your module directory. Once you have created a view, you can create it like this:
+To create a view that will be used by your module, simply create a **views** directory within your module directory. Once you have created a view, you can get an instance of it like this:
 
 	$view = View::make('module::view.name');
 
@@ -47,7 +47,7 @@ Notice the module qualifier followed by two colons? This tells Laravel which mod
 <a name="libraries"></a>
 ### Module Models & Libraries
 
-Using models and libraries within modules is very similar to using them within your application. However, module models and libraries must be namespaced using the module name. So, if you have a User model within your **admin** model, it should be namespaced like so:
+Using models and libraries within modules is very similar to using them within your application. However, module models and libraries must be namespaced using the module name. So, if you have a **User** model within your **admin** model, it should be namespaced like so:
 
 	namespace Admin;
 
@@ -60,7 +60,7 @@ Once you have created the model, you may use it anywhere within your application
 <a name="config"></a>
 ### Module Configuration and Language
 
-You can create module configuration and language files just like you create their application counterparts. To load them, using double-colon module qualifier, just like you load module views:
+You can create module configuration and language files just like you create their application counterparts. To load them, use double-colon module qualifier, just like you load module views:
 
 	Config::get('module::option.name');
 

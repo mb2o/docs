@@ -26,7 +26,7 @@ Libraries can be considered the "helper" classes of your application. Usually, t
 
 Packages and libraries have many things in common. Often, they provide functionality that is not specific to your application. However, packages are generally not written specifically for Laravel. For example, the wonderful e-mailing package [SwiftMailer](http//swiftmailer.org) is not written just for Laravel, but it can be used in a variety of frameworks, including Laravel. All packages live in the **packages** directory.
 
-Often, it is necessary for packages to be bootstrapped. For example, the package may need to register its own auto-loader. Not a problem. The **package** class provides an easy to load packages. If a **bootstrap.php** file is present in the package root directory, it will be run.
+Often, it is necessary for packages to be bootstrapped. For example, the package may need to register its own auto-loader. Not a problem. The **package** class provides an easy way to load packages. If a **bootstrap.php** file is present in the package root directory, it will be run.
 
 	Package::load('swift-mailer');
 
@@ -43,7 +43,7 @@ Sometimes you may want to load a package for every request to your application. 
 
 	'packages' => array('swift-mailer')
 
-Alternatively, you can use the [needs keyword on a route](/docs/start/routes#dependencies).
+Alternatively, you can use the [**needs** keyword on a route](/docs/start/routes#dependencies).
 
 <a name="package-register"></a>
 ### Registering Load Paths
@@ -52,4 +52,4 @@ Have you written a package and want its classes to be auto-loaded by Laravel? Ch
 
 	Loader::register('path/to/package/root');
 
-Once a directory has been registered, the Laravel auto-loader will search the directory for classes in exactly the same way it searches the **models** and **libraries** directories.
+Once a directory has been registered, the Laravel auto-loader will search the directory for classes in exactly the same way it searches the application **models** and **libraries** directories.
