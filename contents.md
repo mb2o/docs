@@ -28,6 +28,8 @@
 	- [Cookies](/docs/start/interaction#cookies)
 	- [Building Forms](/docs/start/interaction#forms)
 - [Data Validation](/docs/start/validation)
+- [Models, Libraries, & Packages](/docs/start/libraries)
+- [Modules](/docs/start/modules)
 
 ## Database
 
