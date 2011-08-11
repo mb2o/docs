@@ -47,6 +47,10 @@ To determine if the user of your application is logged in, call the **check** me
 	     return "You're logged in!";
 	}
 
+Sometimes you may need to login a user without checking their credentials, such as after a user registers to use your application. It's easy using the **login** method. Just pass your user object:
+
+	Auth::login($user);
+
 <a name="filter"></a>
 ### Protecting Routes
 
