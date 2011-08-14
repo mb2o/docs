@@ -31,9 +31,9 @@ You can compare an unhashed value against a hashed one using the **check** metho
 <a name="login"></a>
 ### Logging In
 
-Logging a user into your application is simple using the **attempt** method on the Auth class. Simply pass the username and password of the user to the method. The attempt method will return **true** if the credentials are valid. Otherwise, **false** will be returned:
+Logging a user into your application is simple using the **login** method on the Auth class. Simply pass the username and password of the user to the method. The login method will return **true** if the credentials are valid. Otherwise, **false** will be returned:
 
-	if (Auth::attempt('example@gmail.com', 'password'))
+	if (Auth::login('example@gmail.com', 'password'))
 	{
 	     return Redirect::to('user/profile');
 	}
@@ -47,9 +47,9 @@ To determine if the user of your application is logged in, call the **check** me
 	     return "You're logged in!";
 	}
 
-Sometimes you may need to login a user without checking their credentials, such as after a user first registers to use your application. It's easy using the **login** method. Just pass your user object:
+Sometimes you may need to login a user without checking their credentials, such as after a user first registers to use your application. It's easy using the **remember** method. Just pass your user object:
 
-	Auth::login($user);
+	Auth::remember($user);
 
 <a name="filter"></a>
 ### Protecting Routes

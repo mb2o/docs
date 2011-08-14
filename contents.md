@@ -56,6 +56,7 @@
 ## Other Topics
 
 - [Working With Files](/docs/other/file)
+- [Working With Strings](/docs/other/text)
 - [Localization](/docs/other/lang)
 - [Encryption](/docs/other/crypt)
 - [Benchmarking Code](/docs/other/benchmark)
